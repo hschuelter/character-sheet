@@ -1,2 +1,2 @@
 # character-sheet
-Dynamic character sheet form Tabletop RPG
+Dynamic character sheet for Tabletop RPG
