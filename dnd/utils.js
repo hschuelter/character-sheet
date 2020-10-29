@@ -1,17 +1,17 @@
 //  Set Ability Modifiers according to Ability Score
 function updateModifiers(){
     //  Convert Ability Scores to Modifiers
-    var strScore =   document.getElementById("strScore").value;
+    var strScore = document.getElementById("strScore").value;
   document.getElementById("strMod").value = Math.floor((strScore - 10)/2);
-    var dexScore =   document.getElementById("dexScore").value;
+    var dexScore = document.getElementById("dexScore").value;
   document.getElementById("dexMod").value = Math.floor((dexScore - 10)/2);
-    var conScore =   document.getElementById("conScore").value;
+    var conScore = document.getElementById("conScore").value;
   document.getElementById("conMod").value = Math.floor((conScore - 10)/2);
-    var intScore =   document.getElementById("intScore").value;
+    var intScore = document.getElementById("intScore").value;
   document.getElementById("intMod").value = Math.floor((intScore - 10)/2);
-    var wisScore =   document.getElementById("wisScore").value;
+    var wisScore = document.getElementById("wisScore").value;
   document.getElementById("wisMod").value = Math.floor((wisScore - 10)/2);
-    var chaScore =   document.getElementById("chaScore").value;
+    var chaScore = document.getElementById("chaScore").value;
   document.getElementById("chaMod").value = Math.floor((chaScore - 10)/2);
     
     //  Set Variables based on Ability Scores and Class Details
@@ -30,76 +30,12 @@ function updateModifiers(){
     // Update Skills, Attacks, etc.
     setSkills();
     setNewtypePowers();
-    setMaxMSStats();
   }
-  
-  //  Set Base MS Stats based on Selection
-  function setMobileSuit(mobileSuit) {
-   var ms = mobileSuit.value;
-   if (ms == 'rgm79') {
-       document.getElementById("baseArmor").value = 8;
-       document.getElementById("baseEvasion").value = 8;
-       document.getElementById("baseLoadout").value = 8;
-       } else if (ms == 'ms05') {
-       document.getElementById("baseArmor").value = 8;
-       document.getElementById("baseEvasion").value = 7;
-       document.getElementById("baseLoadout").value = 8; 
-       } else if (ms == 'ms06') {
-       document.getElementById("baseArmor").value = 9;
-       document.getElementById("baseEvasion").value = 8;
-       document.getElementById("baseLoadout").value = 8; 
-       } else if (ms == 'rx78') {
-       document.getElementById("baseArmor").value = 11;
-       document.getElementById("baseEvasion").value = 10;
-       document.getElementById("baseLoadout").value = 12; 
-       } else {
-         // Leave values unchanged
-       }
-    setMaxMSStats();
-  }
-  
-  //  Calculate max Armor Points and Evasion based on MS and Modifiers
-  function setMaxMSStats () {
-    var baseE = parseInt(document.getElementById("baseEvasion").value);
-    var baseA = parseInt(document.getElementById("baseArmor").value);
-    var prof = document.getElementById("msProficiency").value;
-    var playerLevel = parseInt(document.getElementById("level").value);  
-    var profBonus = parseInt(document.getElementById("proficiencyBonus").value);
-    var halfProf = Math.floor(profBonus/2);
-    var strBonus = parseInt(document.getElementById("strMod").value);
-    var dexBonus = parseInt(document.getElementById("dexMod").value);
-    var conBonus = parseInt(document.getElementById("conMod").value);
-    var intBonus = parseInt(document.getElementById("intMod").value);
-    var wisBonus = parseInt(document.getElementById("wisMod").value);
-    var chaBonus = parseInt(document.getElementById("chaMod").value); 
-    
-    if (prof == 'none') {
-        document.getElementById("evasionRate").value = baseE + dexBonus;
-        document.getElementById("maxArmor").value = (baseA + conBonus) * playerLevel;
-        } else if (prof == 'half') {
-        document.getElementById("evasionRate").value = baseE + dexBonus + halfProf;
-        document.getElementById("maxArmor").value = (baseA + conBonus + halfProf) * playerLevel;  
-        } else {
-        document.getElementById("evasionRate").value = baseE + dexBonus + profBonus;
-        document.getElementById("maxArmor").value = (baseA + conBonus + profBonus) * playerLevel;  
-        }
-    
-  }
-  
+
   //  Set Proficiency Bonus based on Player Level
   function updateProficiency() {
     window.playerLevel = parseInt(document.getElementById("level").value);
-    if (playerLevel >= 17) {
-      document.getElementById("proficiencyBonus").value = 6;
-    } else if (playerLevel >= 13) {
-      document.getElementById("proficiencyBonus").value = 5;
-    } else if (playerLevel >= 9) {
-      document.getElementById("proficiencyBonus").value = 4;
-    } else if (playerLevel >= 5) {
-      document.getElementById("proficiencyBonus").value = 3;
-    } else {
-      document.getElementById("proficiencyBonus").value = 2;
-    }
+    document.getElementById("proficiencyBonus").value = Math.ceil(playerLevel / 4) + 1;
     window.proficiencyBonus = parseInt(document.getElementById("proficiencyBonus").value);
   }
   
@@ -110,8 +46,19 @@ function updateModifiers(){
     enableFeats();
     setNewtypePowers();
     addNewtypePowers();
-    setMaxMSStats();
     longRest();
+  }
+
+  function updateSkillProficiency(skill, skillProf, abilityMod) {
+    var profBonus = parseInt(document.getElementById("proficiencyBonus").value);
+    var abilityBonus = parseInt(document.getElementById(abilityMod).value);
+
+    if (document.getElementById(skillProf).checked == true) {
+      document.getElementById(skill).value = abilityBonus + profBonus;
+    } else {
+      document.getElementById(skill).value = abilityBonus;  
+    }
+
   }
   
   //  Set skill values based on Profciency and Ability Modifiers
@@ -151,27 +98,27 @@ function updateModifiers(){
     }
 
     if (document.getElementById("deceptionProf").checked == true) {
-      document.getElementById("deception").value = intBonus + profBonus;
+      document.getElementById("deception").value = chaBonus + profBonus;
     } else {
-      document.getElementById("deception").value = intBonus;  
+      document.getElementById("deception").value = chaBonus;  
     }
 
     if (document.getElementById("historyProf").checked == true) {
-      document.getElementById("history").value = chaBonus + profBonus;
+      document.getElementById("history").value = intBonus + profBonus;
     } else {
-      document.getElementById("history").value = chaBonus;  
+      document.getElementById("history").value = intBonus;  
     }
 
     if (document.getElementById("insightProf").checked == true) {
-      document.getElementById("insight").value = chaBonus + profBonus;
+      document.getElementById("insight").value = wisBonus + profBonus;
     } else {
-      document.getElementById("insight").value = chaBonus;  
+      document.getElementById("insight").value = wisBonus;  
     }
 
     if (document.getElementById("intimidationProf").checked == true) {
-      document.getElementById("intimidation").value = conBonus + profBonus;
+      document.getElementById("intimidation").value = chaBonus + profBonus;
     } else {
-      document.getElementById("intimidation").value = conBonus;  
+      document.getElementById("intimidation").value = chaBonus;  
     }
 
     if (document.getElementById("investigationProf").checked == true) {
@@ -181,33 +128,33 @@ function updateModifiers(){
     }
 
     if (document.getElementById("medicineProf").checked == true) {
-      document.getElementById("medicine").value = intBonus + profBonus;
+      document.getElementById("medicine").value = wisBonus + profBonus;
     } else {
-      document.getElementById("medicine").value = intBonus;  
+      document.getElementById("medicine").value = wisBonus;  
     }
 
     if (document.getElementById("natureProf").checked == true) {
-      document.getElementById("nature").value = strBonus + profBonus;
+      document.getElementById("nature").value = intBonus + profBonus;
     } else {
-      document.getElementById("nature").value = strBonus;  
+      document.getElementById("nature").value = intBonus;  
     }
 
     if (document.getElementById("perceptionProf").checked == true) {
-      document.getElementById("perception").value = intBonus + profBonus;
+      document.getElementById("perception").value = wisBonus + profBonus;
     } else {
-      document.getElementById("perception").value = intBonus;  
+      document.getElementById("perception").value = wisBonus;  
     }
 
     if (document.getElementById("performanceProf").checked == true) {
-      document.getElementById("performance").value = dexBonus + profBonus;
+      document.getElementById("performance").value = chaBonus + profBonus;
     } else {
-      document.getElementById("performance").value = dexBonus;  
+      document.getElementById("performance").value = chaBonus;  
     }
 
     if (document.getElementById("persuasionProf").checked == true) {
-      document.getElementById("persuasion").value = wisBonus + profBonus;
+      document.getElementById("persuasion").value = chaBonus + profBonus;
     } else {
-      document.getElementById("persuasion").value = wisBonus;  
+      document.getElementById("persuasion").value = chaBonus;  
     }
 
     if (document.getElementById("religionProf").checked == true) {
@@ -217,21 +164,21 @@ function updateModifiers(){
     }
 
     if (document.getElementById("sleightProf").checked == true) {
-      document.getElementById("sleight").value = chaBonus + profBonus;
+      document.getElementById("sleight").value = dexBonus + profBonus;
     } else {
-      document.getElementById("sleight").value = chaBonus;  
+      document.getElementById("sleight").value = dexBonus;  
     }
 
     if (document.getElementById("stealthProf").checked == true) {
-      document.getElementById("stealth").value = conBonus + profBonus;
+      document.getElementById("stealth").value = dexBonus + profBonus;
     } else {
-      document.getElementById("stealth").value = conBonus;  
+      document.getElementById("stealth").value = dexBonus;  
     }
 
     if (document.getElementById("survivalProf").checked == true) {
-      document.getElementById("survival").value = conBonus + profBonus;
+      document.getElementById("survival").value = wisBonus + profBonus;
     } else {
-      document.getElementById("survival").value = conBonus;  
+      document.getElementById("survival").value = wisBonus;  
     }
     
   }
