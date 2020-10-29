@@ -1,0 +1,43 @@
+.slot {
+    border: 1px solid #9cacaf;
+    
+    background-color: #fcfcfc;
+  }
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.textarea {
+    width: 95%;
+
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-width: 2px;
+    background-color:rgba(0,0,0,0); 
+}
+
+.table {
+    width: 90%;
+}
+
+.ability-score {
+    width: 90%;
+
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.skill-score {
+    width: 95%;
+    margin-right: auto;
+}
+
+.x-large {
+    font-size: x-large;
+
+}

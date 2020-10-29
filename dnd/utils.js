@@ -66,22 +66,22 @@ function updateModifiers(){
     var playerLevel = parseInt(document.getElementById("level").value);  
     var profBonus = parseInt(document.getElementById("proficiencyBonus").value);
     var halfProf = Math.floor(profBonus/2);
-    var willBonus = parseInt(document.getElementById("strMod").value);
-    var reactionsBonus = parseInt(document.getElementById("dexMod").value);
-    var engineeringBonus = parseInt(document.getElementById("conMod").value);
-    var mentalityBonus = parseInt(document.getElementById("intMod").value);
-    var psycheBonus = parseInt(document.getElementById("wisMod").value);
-    var cunningBonus = parseInt(document.getElementById("chaMod").value); 
+    var strBonus = parseInt(document.getElementById("strMod").value);
+    var dexBonus = parseInt(document.getElementById("dexMod").value);
+    var conBonus = parseInt(document.getElementById("conMod").value);
+    var intBonus = parseInt(document.getElementById("intMod").value);
+    var wisBonus = parseInt(document.getElementById("wisMod").value);
+    var chaBonus = parseInt(document.getElementById("chaMod").value); 
     
     if (prof == 'none') {
-        document.getElementById("evasionRate").value = baseE + reactionsBonus;
-        document.getElementById("maxArmor").value = (baseA + engineeringBonus) * playerLevel;
+        document.getElementById("evasionRate").value = baseE + dexBonus;
+        document.getElementById("maxArmor").value = (baseA + conBonus) * playerLevel;
         } else if (prof == 'half') {
-        document.getElementById("evasionRate").value = baseE + reactionsBonus + halfProf;
-        document.getElementById("maxArmor").value = (baseA + engineeringBonus + halfProf) * playerLevel;  
+        document.getElementById("evasionRate").value = baseE + dexBonus + halfProf;
+        document.getElementById("maxArmor").value = (baseA + conBonus + halfProf) * playerLevel;  
         } else {
-        document.getElementById("evasionRate").value = baseE + reactionsBonus + profBonus;
-        document.getElementById("maxArmor").value = (baseA + engineeringBonus + profBonus) * playerLevel;  
+        document.getElementById("evasionRate").value = baseE + dexBonus + profBonus;
+        document.getElementById("maxArmor").value = (baseA + conBonus + profBonus) * playerLevel;  
         }
     
   }
@@ -118,113 +118,120 @@ function updateModifiers(){
   function setSkills() {
     // Set Variables
     var profBonus = parseInt(document.getElementById("proficiencyBonus").value);
-    var willBonus = parseInt(document.getElementById("strMod").value);
-    var reactionsBonus = parseInt(document.getElementById("dexMod").value);
-    var engineeringBonus = parseInt(document.getElementById("conMod").value);
-    var mentalityBonus = parseInt(document.getElementById("intMod").value);
-    var psycheBonus = parseInt(document.getElementById("wisMod").value);
-    var cunningBonus = parseInt(document.getElementById("chaMod").value);
+    var strBonus = parseInt(document.getElementById("strMod").value);
+    var dexBonus = parseInt(document.getElementById("dexMod").value);
+    var conBonus = parseInt(document.getElementById("conMod").value);
+    var intBonus = parseInt(document.getElementById("intMod").value);
+    var wisBonus = parseInt(document.getElementById("wisMod").value);
+    var chaBonus = parseInt(document.getElementById("chaMod").value);
     
     //  Initialize Skill Variables and Add Proficiency
     if (document.getElementById("acrobaticsProf").checked == true) {
-    document.getElementById("acrobatics").value = reactionsBonus + profBonus;
+      document.getElementById("acrobatics").value = dexBonus + profBonus;
     } else {
-    document.getElementById("acrobatics").value = reactionsBonus;  
+      document.getElementById("acrobatics").value = dexBonus;  
     }
-    if (document.getElementById("agsmProf").checked == true) {
-    document.getElementById("agsm").value = willBonus + profBonus;
+
+    if (document.getElementById("animaHandlingProf").checked == true) {
+      document.getElementById("animaHandling").value = wisBonus + profBonus;
     } else {
-    document.getElementById("agsm").value = willBonus;  
+      document.getElementById("animaHandling").value = wisBonus;  
     }
+
+    if (document.getElementById("arcanaProf").checked == true) {
+      document.getElementById("arcana").value = intBonus + profBonus;
+    } else {
+      document.getElementById("arcana").value = intBonus;  
+    }
+
     if (document.getElementById("athleticsProf").checked == true) {
-    document.getElementById("athletics").value = willBonus + profBonus;
+      document.getElementById("athletics").value = strBonus + profBonus;
     } else {
-    document.getElementById("athletics").value = willBonus;  
+      document.getElementById("athletics").value = strBonus;  
     }
-    if (document.getElementById("colonyProf").checked == true) {
-    document.getElementById("colony").value = engineeringBonus + profBonus;
-    } else {
-    document.getElementById("colony").value = engineeringBonus;  
-    }
-    if (document.getElementById("computerProf").checked == true) {
-    document.getElementById("computer").value = mentalityBonus + profBonus;
-    } else {
-    document.getElementById("computer").value = mentalityBonus;  
-    }
-    if (document.getElementById("commandProf").checked == true) {
-    document.getElementById("command").value = cunningBonus + profBonus;
-    } else {
-    document.getElementById("command").value = cunningBonus;  
-    }
+
     if (document.getElementById("deceptionProf").checked == true) {
-    document.getElementById("deception").value = cunningBonus + profBonus;
+      document.getElementById("deception").value = intBonus + profBonus;
     } else {
-    document.getElementById("deception").value = cunningBonus;  
+      document.getElementById("deception").value = intBonus;  
     }
-    if (document.getElementById("demolitionsProf").checked == true) {
-    document.getElementById("demolitions").value = engineeringBonus + profBonus;
-    } else {
-    document.getElementById("demolitions").value = engineeringBonus;  
-    }
+
     if (document.getElementById("historyProf").checked == true) {
-    document.getElementById("history").value = mentalityBonus + profBonus;
+      document.getElementById("history").value = chaBonus + profBonus;
     } else {
-    document.getElementById("history").value = mentalityBonus;  
+      document.getElementById("history").value = chaBonus;  
     }
+
     if (document.getElementById("insightProf").checked == true) {
-    document.getElementById("insight").value = mentalityBonus + profBonus;
+      document.getElementById("insight").value = chaBonus + profBonus;
     } else {
-    document.getElementById("insight").value = mentalityBonus;  
+      document.getElementById("insight").value = chaBonus;  
     }
+
     if (document.getElementById("intimidationProf").checked == true) {
-    document.getElementById("intimidation").value = willBonus + profBonus;
+      document.getElementById("intimidation").value = conBonus + profBonus;
     } else {
-    document.getElementById("intimidation").value = willBonus;  
+      document.getElementById("intimidation").value = conBonus;  
     }
+
     if (document.getElementById("investigationProf").checked == true) {
-    document.getElementById("investigation").value = mentalityBonus + profBonus;
+      document.getElementById("investigation").value = intBonus + profBonus;
     } else {
-    document.getElementById("investigation").value = mentalityBonus;  
+      document.getElementById("investigation").value = intBonus;  
     }
-    if (document.getElementById("landProf").checked == true) {
-    document.getElementById("land").value = reactionsBonus + profBonus;
+
+    if (document.getElementById("medicineProf").checked == true) {
+      document.getElementById("medicine").value = intBonus + profBonus;
     } else {
-    document.getElementById("land").value = reactionsBonus;  
+      document.getElementById("medicine").value = intBonus;  
     }
-    if (document.getElementById("newtypeProf").checked == true) {
-    document.getElementById("newtype").value = psycheBonus + profBonus;
+
+    if (document.getElementById("natureProf").checked == true) {
+      document.getElementById("nature").value = strBonus + profBonus;
     } else {
-    document.getElementById("newtype").value = psycheBonus;  
+      document.getElementById("nature").value = strBonus;  
     }
+
     if (document.getElementById("perceptionProf").checked == true) {
-    document.getElementById("perception").value = mentalityBonus + profBonus;
+      document.getElementById("perception").value = intBonus + profBonus;
     } else {
-    document.getElementById("perception").value = mentalityBonus;  
+      document.getElementById("perception").value = intBonus;  
     }
+
+    if (document.getElementById("performanceProf").checked == true) {
+      document.getElementById("performance").value = dexBonus + profBonus;
+    } else {
+      document.getElementById("performance").value = dexBonus;  
+    }
+
     if (document.getElementById("persuasionProf").checked == true) {
-    document.getElementById("persuasion").value = cunningBonus + profBonus;
+      document.getElementById("persuasion").value = wisBonus + profBonus;
     } else {
-    document.getElementById("persuasion").value = cunningBonus;  
+      document.getElementById("persuasion").value = wisBonus;  
     }
-    if (document.getElementById("repairProf").checked == true) {
-    document.getElementById("repair").value = engineeringBonus + profBonus;
+
+    if (document.getElementById("religionProf").checked == true) {
+      document.getElementById("religion").value = intBonus + profBonus;
     } else {
-    document.getElementById("repair").value = engineeringBonus;  
+      document.getElementById("religion").value = intBonus;  
     }
-    if (document.getElementById("salvageProf").checked == true) {
-    document.getElementById("salvage").value = engineeringBonus + profBonus;
-    } else {
-    document.getElementById("salvage").value = engineeringBonus;  
-    }
+
     if (document.getElementById("sleightProf").checked == true) {
-    document.getElementById("sleight").value = reactionsBonus + profBonus;
+      document.getElementById("sleight").value = chaBonus + profBonus;
     } else {
-    document.getElementById("sleight").value = reactionsBonus;  
+      document.getElementById("sleight").value = chaBonus;  
     }
+
     if (document.getElementById("stealthProf").checked == true) {
-    document.getElementById("stealth").value = cunningBonus + profBonus;
+      document.getElementById("stealth").value = conBonus + profBonus;
     } else {
-    document.getElementById("stealth").value = cunningBonus;  
+      document.getElementById("stealth").value = conBonus;  
+    }
+
+    if (document.getElementById("survivalProf").checked == true) {
+      document.getElementById("survival").value = conBonus + profBonus;
+    } else {
+      document.getElementById("survival").value = conBonus;  
     }
     
   }
@@ -1262,10 +1269,10 @@ function updateModifiers(){
     var currentAP = parseInt(document.getElementById("currentArmor").value);
     var maxHP = parseInt(document.getElementById("maxHP").value);
     var maxAP = parseInt(document.getElementById("maxArmor").value);
-    var willBonus = parseInt(document.getElementById("strMod").value);
-    var engineeringBonus = parseInt(document.getElementById("conMod").value);
-    var healHP = currentHP + random + willBonus;
-    var healAP = currentAP + healing + engineeringBonus;
+    var strBonus = parseInt(document.getElementById("strMod").value);
+    var conBonus = parseInt(document.getElementById("conMod").value);
+    var healHP = currentHP + random + strBonus;
+    var healAP = currentAP + healing + conBonus;
     
     if (healHP > maxHP) {
         document.getElementById("currentHP").value = maxHP;
