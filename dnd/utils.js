@@ -195,36 +195,23 @@ function updateModifiers(){
 
 function updateHealth(){
   var currentHP = parseInt(document.getElementById("currentHP").value);
-  var maxHP = parseInt(document.getElementById("maxHP").value);
+  var maxHP     = parseInt(document.getElementById("maxHP").value);
+  var ratio = 100 * currentHP / maxHP;
 
   if (currentHP > maxHP) {
-    currentHP = maxHP;
+   ratio = 100;
   }  
   
   if (currentHP < 0) {
-    currentHP = 0;
+    ratio = 0;
   }
+  
 
-  var ratio = 100 * currentHP / maxHP;
   var healthBar = document.getElementById("healthBar");
   var healthBarText = document.getElementById("healthBarText");
   
   healthBar.style.width = ratio + '%';
   healthBarText.innerHTML = currentHP + '/' + maxHP;
-  
-  // var width = currentHP;
-  // var id = setInterval(frame, 5);
-
-  // function frame() {
-  //   if (width > ratio) {
-  //     // clearInterval(id);
-  //   } else {
-  //     width++;
-  //     healthBar.style.width = width + '%';
-  //     // healthBarText.innerHTML = healthBar.style.width;
-  //     healthBarText.innerHTML = currentHP + ' / ' + maxHP;
-  //   }
-  // }
 }
 
   

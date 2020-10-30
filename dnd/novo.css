@@ -2,7 +2,85 @@
     border: 1px solid #9cacaf;
     /* background-color: tomato; */
     background-color: #fcfcfc;
-  }
+}
+
+.slot-up {
+    border: 1px solid #9cacaf;
+    border-bottom-style: hidden;
+
+    border-radius: 10px 10px 0px 0px;
+    /* background-color: tomato; */
+    background-color: #fcfcfc;
+
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.slot-down {
+    border: 1px solid #9cacaf;
+    border-top-style: hidden;
+
+    border-radius: 0px 0px 10px 10px;
+    color: white;
+    
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.hp-slot-upleft {
+    border: 1px solid #9cacaf;
+    background-color: #fcfcfc;
+    color: white;
+    border-bottom-style: hidden;
+    border-right-style: hidden;
+    border-radius: 10px 0px 0px 0px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.hp-slot-downleft {
+    border: 1px solid #9cacaf;
+    background-color: #fcfcfc;
+
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-bottom-style: hidden;
+    padding-top: 10px;
+}
+
+.hp-slot-upright {
+    border: 1px solid #9cacaf;
+    background-color: #fcfcfc;
+    color: white;
+    border-bottom-style: hidden;
+    border-left-style: hidden;
+    border-radius: 0px 10px 0px 0px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.hp-slot-downright {
+    border: 1px solid #9cacaf;
+    background-color: #fcfcfc;
+
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    padding-top: 10px;
+}
+
+.hp-slot-down {
+    border: 1px solid #9cacaf;
+    background-color: #fcfcfc;
+    border-radius: 0px 0px 10px 10px;
+
+    border-top-style: hidden;
+    padding-top: 10px;
+}
+
+.purple {
+    background-color: rgb(132, 71, 255);
+}
 
 .center {
     margin: auto;
@@ -10,11 +88,12 @@
 }
 
 .textarea {
-    width: 95%;
+    width: 80%;
 
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
+    border-bottom-style: hidden;
     border-width: 2px;
     background-color:rgba(0,0,0,0); 
 }
@@ -24,7 +103,7 @@
 }
 
 .ability-score {
-    width: 100%;
+    width: 80%;
 
     border-top-style: hidden;
     border-right-style: hidden;
@@ -34,7 +113,7 @@
 }
 
 .skill-score {
-    width: 100%;
+    width: 80%;
     margin-right: auto;
     background-color:rgba(0,0,0,0); 
 }
@@ -51,11 +130,13 @@
 
 /* ======= Health Bar ======= */
 .health-box {
-    background-color: #ccc;
+    background-color: #bc3a31;
     height: 30px;
     width: 100%;
     margin: 5px;
+    
     border: solid 1px #aaa;
+    border-radius: 10px;
 }
 
 .health-bar {
@@ -64,6 +145,8 @@
     height: 28px;
     position: relative;
     transition: width 1s;
+    
+    border-radius: 10px;
 }
 
 .health-bar-text {
@@ -71,4 +154,6 @@
     position: relative;
     bottom: 28px;
     color: white;
+
+    border-radius: 10px;
 }
