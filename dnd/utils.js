@@ -23,13 +23,13 @@ function updateModifiers(){
     window.chaMod = parseInt(document.getElementById("chaMod").value);
     
     //  Set Max HP and Initiative Values
-    document.getElementById("maxHP").value = 10 + strMod;
+    // document.getElementById("maxHP").value = 10 + strMod;
     document.getElementById("initiative").value = dexMod;
-    window.maxHP = parseInt(document.getElementById("maxHP").value);
+    // window.maxHP = parseInt(document.getElementById("maxHP").value);
     
     // Update Skills, Attacks, etc.
     setSkills();
-    setNewtypePowers();
+    // setNewtypePowers();
   }
 
   //  Set Proficiency Bonus based on Player Level
@@ -192,6 +192,41 @@ function updateModifiers(){
     document.getElementById("newtypeSave").value = (8 + newtypeBonus + profBonus);
     
   }
+
+function updateHealth(){
+  var currentHP = parseInt(document.getElementById("currentHP").value);
+  var maxHP = parseInt(document.getElementById("maxHP").value);
+
+  if (currentHP > maxHP) {
+    currentHP = maxHP;
+  }  
+  
+  if (currentHP < 0) {
+    currentHP = 0;
+  }
+
+  var ratio = 100 * currentHP / maxHP;
+  var healthBar = document.getElementById("healthBar");
+  var healthBarText = document.getElementById("healthBarText");
+  
+  healthBar.style.width = ratio + '%';
+  healthBarText.innerHTML = currentHP + '/' + maxHP;
+  
+  // var width = currentHP;
+  // var id = setInterval(frame, 5);
+
+  // function frame() {
+  //   if (width > ratio) {
+  //     // clearInterval(id);
+  //   } else {
+  //     width++;
+  //     healthBar.style.width = width + '%';
+  //     // healthBarText.innerHTML = healthBar.style.width;
+  //     healthBarText.innerHTML = currentHP + ' / ' + maxHP;
+  //   }
+  // }
+}
+
   
   // Sets up class-specific variables and options
   function selectClass() {
