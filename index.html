@@ -140,6 +140,110 @@
 
 			</div>
 
+			
+
+			<div class="row">
+				<div class="col-md-3">					
+					<div class="slot-up">
+						<div class="row">
+							<input class="ability-score center spacing x-large" id="proficiencyBonus" type="number" value="2" class="ability"></input>
+						</div>
+					</div>
+					<div class="slot-down purple">
+						<div class="row">
+							<b class="center spacing"> Proficiency Bonus </b> 
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-3">					
+					<div class="slot-up">
+						<div class="row">
+							<input class="ability-score center spacing x-large" id="armorClass" type="number" value="8" class="ability"></input>
+						</div>
+					</div>
+					<div class="slot-down purple">
+						<div class="row">
+							<b class="center spacing"> Armor Class </b>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">					
+					<div class="slot-up">
+						<div class="row">
+							<input class="ability-score center spacing x-large" id="initiative" type="number" value="0" class="ability"></input>
+						</div>
+					</div>
+					<div class="slot-down purple">
+						<div class="row">
+							<b class="center spacing"> Initiative </b> 
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-3">					
+					<div class="slot-up">
+						<div class="row">
+							<input class="ability-score center spacing x-large" id="speed" type="number" value="20" class="ability"></input>
+						</div>
+					</div>
+					<div class="slot-down purple">
+						<div class="row">
+							<b class="center spacing"> Speed </b> 
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-1"> </div>
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-md-6 hp-slot-upleft purple">
+							<div class="row">
+								<b class="center spacing x-large"> Current HP </b> 
+							</div>
+						</div>
+						<div class="col-md-6 hp-slot-upright purple">
+							<div class="row">
+								<b class="center spacing x-large"> Max HP </b> 
+							</div>
+						</div>					
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-1"> </div>
+				<div class="col-md-10">
+					<div class="row">
+						<div class="col-md-6 hp-slot-downleft">
+							<div class="row">
+								<input class="ability-score center spacing x-large" id="currentHP" type="number" value="1" class="ability" onchange="updateHealth();"></input>
+							</div>
+						</div>
+						<div class="col-md-6 hp-slot-downright">
+							<div class="row">
+								<input class="ability-score center spacing x-large" id="maxHP" type="number" value="1" class="ability" onchange="updateHealth();"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-1"> </div>
+				<div class="col-md-10 hp-slot-down">
+					<div class="row">
+						<div class="health-box">
+							<div id="healthBar" class="health-bar"></div>
+							<div id="healthBarText" class="health-bar-text"> 1/1 </div>
+						</div>
+					</div>
+				</div>
+			</div>	
+
 			<div class="row">
 				<div class="col-md-2">
 					<div class="slot-up">
@@ -235,296 +339,170 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-md-3">					
-					<div class="slot-up">
-						<div class="row">
-							<input class="ability-score center spacing x-large" id="proficiencyBonus" type="number" value="2" class="ability"></input>
-						</div>
-					</div>
-					<div class="slot-down purple">
-						<div class="row">
-							<b class="center spacing"> Proficiency Bonus: </b> 
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-md-3">					
-					<div class="slot-up">
-						<div class="row">
-							<input class="ability-score center spacing x-large" id="armorClass" type="number" value="8" class="ability"></input>
-						</div>
-					</div>
-					<div class="slot-down purple">
-						<div class="row">
-							<b class="center spacing"> Armor Class: </b>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3">					
-					<div class="slot-up">
-						<div class="row">
-							<input class="ability-score center spacing x-large" id="initiative" type="number" value="0" class="ability"></input>
-						</div>
-					</div>
-					<div class="slot-down purple">
-						<div class="row">
-							<b class="center spacing"> Initiative: </b> 
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-3">					
-					<div class="slot-up">
-						<div class="row">
-							<input class="ability-score center spacing x-large" id="speed" type="number" value="20" class="ability"></input>
-						</div>
-					</div>
-					<div class="slot-down purple">
-						<div class="row">
-							<b class="center spacing"> Speed: </b> 
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-			<div class="row">
-				<div class="col-md-1"> </div>
-				<div class="col-md-10">
-					<div class="row">
-						<div class="col-md-6 hp-slot-upleft purple">
-							<div class="row">
-								<b class="center spacing x-large"> Current HP </b> 
-							</div>
-						</div>
-						<div class="col-md-6 hp-slot-upright purple">
-							<div class="row">
-								<b class="center spacing x-large"> Max HP </b> 
-							</div>
-						</div>					
-					</div>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="col-md-1"> </div>
-				<div class="col-md-10">
-					<div class="row">
-						<div class="col-md-6 hp-slot-downleft">
-							<div class="row">
-								<input class="ability-score center spacing x-large" id="currentHP" type="number" value="1" class="ability" onchange="updateHealth();"></input>
-							</div>
-						</div>
-						<div class="col-md-6 hp-slot-downright">
-							<div class="row">
-								<input class="ability-score center spacing x-large" id="maxHP" type="number" value="1" class="ability" onchange="updateHealth();"></input>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-1"> </div>
-				<div class="col-md-10 hp-slot-down">
-					<div class="row">
-						<div class="health-box">
-							<div id="healthBar" class="health-bar"></div>
-							<div id="healthBarText" class="health-bar-text"> 1/1 </div>
-						</div>
-					</div>
-				</div>
-			</div>	
 		</div>	
-			
-			
+		
+		<!-- ******************************************** -->
+
 		<div class="container">
-			<!-- <div class="row">
-				<div class="col-md-6 slot">
-					<div class="row">
-						<b class="center spacing"> Current HP: </b> 
-						<input class="ability-score center spacing x-large" id="currentHP" type="number" value="1" class="ability" onchange="updateHealth();"></input>
-					</div>
-				</div>
-				<div class="col-md-6 slot">
-					<div class="row">
-						<b class="center spacing"> Max HP: </b> 
-						
-					</div>
-				</div>
-			</div> -->
-
-			<div class="row slot" >
-				<div class="col-md-12 slot">
-					<!-- <div class="row">
-						<div class="health-box">
-							<div id="healthBar" class="health-bar"></div>
-							<div id="healthBarText" class="health-bar-text"> 1/1 </div>
-						</div>
-					</div> -->
-				</div>
-				<h3 class="center spacing"> Ability Scores </h3> 
-			</div>
-		</div>
-
-		<div class="container center">
 			<div class="row">
-				<div class="col-md-6 slot">
-					<div class="row">
-						<h3 class="center spacing"> Skills </h3>
+				<div class="col-md-6">
+					<div class="slot-up purple">
+						<div class="row">
+							<b class="center spacing x-large white-font"> Skills </b> 
+						</div>
 					</div>
 
-					<div class="row">
-						<table class="table table-hover">
-							<tr>
-								<th>
-									<input id="acrobaticsProf" type="checkbox" onchange="updateSkillProficiency('acrobatics', 'acrobaticsProf', 'dexMod');"></input>
-								</th>
-								<th>Acrobatics (Dex): </th>
-								<th><input id="acrobatics" type="number" class="score" value="0"></input></th>
-							</tr>
+					<div class="slot-down">
+						<div class="row">
+							<table class="table table-hover center">
+								<tr>
+									<th>
+										<input id="acrobaticsProf" type="checkbox" onchange="updateSkillProficiency('acrobatics', 'acrobaticsProf', 'dexMod');"></input>
+									</th>
+									<th>Acrobatics (Dex): </th>
+									<th><input id="acrobatics" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="animaHandlingProf" type="checkbox" onchange="updateSkillProficiency('animaHandling', 'animaHandlingProf', 'wisMod');"></input>
-								</th>
-								<th>Animal Handling (Wis): </th>
-								<th><input id="animaHandling" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="animaHandlingProf" type="checkbox" onchange="updateSkillProficiency('animaHandling', 'animaHandlingProf', 'wisMod');"></input>
+									</th>
+									<th>Animal Handling (Wis): </th>
+									<th><input id="animaHandling" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="arcanaProf" type="checkbox" onchange="updateSkillProficiency('arcana', 'arcanaProf', 'intMod');"></input>
-								</th>
-								<th>Arcana (Int): </th>
-								<th><input id="arcana" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="arcanaProf" type="checkbox" onchange="updateSkillProficiency('arcana', 'arcanaProf', 'intMod');"></input>
+									</th>
+									<th>Arcana (Int): </th>
+									<th><input id="arcana" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="athleticsProf" type="checkbox" onchange="updateSkillProficiency('athletics', 'athleticsProf', 'strMod');"></input>
-								</th>
-								<th>Athletics (Str): </th>
-								<th><input id="athletics" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="athleticsProf" type="checkbox" onchange="updateSkillProficiency('athletics', 'athleticsProf', 'strMod');"></input>
+									</th>
+									<th>Athletics (Str): </th>
+									<th><input id="athletics" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="deceptionProf" type="checkbox" onchange="updateSkillProficiency('deception', 'deceptionProf', 'chaMod');"></input>
-								</th>
-								<th>Deception (Cha): </th>
-								<th><input id="deception" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="deceptionProf" type="checkbox" onchange="updateSkillProficiency('deception', 'deceptionProf', 'chaMod');"></input>
+									</th>
+									<th>Deception (Cha): </th>
+									<th><input id="deception" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="historyProf" type="checkbox" onchange="updateSkillProficiency('history', 'historyProf', 'intMod');"></input>
-								</th>
-								<th>History (Int): </th>
-								<th><input id="history" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="historyProf" type="checkbox" onchange="updateSkillProficiency('history', 'historyProf', 'intMod');"></input>
+									</th>
+									<th>History (Int): </th>
+									<th><input id="history" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="insightProf" type="checkbox" onchange="updateSkillProficiency('insight', 'insightProf', 'wisMod');"></input>
-								</th>
-								<th>Insight (Wis): </th>
-								<th><input id="insight" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="insightProf" type="checkbox" onchange="updateSkillProficiency('insight', 'insightProf', 'wisMod');"></input>
+									</th>
+									<th>Insight (Wis): </th>
+									<th><input id="insight" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="intimidationProf" type="checkbox" onchange="updateSkillProficiency('intimidation', 'intimidationProf', 'chaMod');"></input>
-								</th>
-								<th>Intimidation (Cha): </th>
-								<th><input id="intimidation" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="intimidationProf" type="checkbox" onchange="updateSkillProficiency('intimidation', 'intimidationProf', 'chaMod');"></input>
+									</th>
+									<th>Intimidation (Cha): </th>
+									<th><input id="intimidation" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="investigationProf" type="checkbox" onchange="updateSkillProficiency('investigation', 'investigationProf', 'intMod');"></input>
-								</th>
-								<th>Investigation (Int): </th>
-								<th><input id="investigation" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="investigationProf" type="checkbox" onchange="updateSkillProficiency('investigation', 'investigationProf', 'intMod');"></input>
+									</th>
+									<th>Investigation (Int): </th>
+									<th><input id="investigation" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="medicineProf" type="checkbox" onchange="updateSkillProficiency('medicine', 'medicineProf', 'intMod');"></input>
-								</th>
-								<th>Medicine (Wis): </th>
-								<th><input id="medicine" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="medicineProf" type="checkbox" onchange="updateSkillProficiency('medicine', 'medicineProf', 'intMod');"></input>
+									</th>
+									<th>Medicine (Wis): </th>
+									<th><input id="medicine" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="natureProf" type="checkbox" onchange="updateSkillProficiency('nature', 'natureProf', 'intMod');"></input>
-								</th>
-								<th>Nature (Int): </th>
-								<th><input id="nature" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="natureProf" type="checkbox" onchange="updateSkillProficiency('nature', 'natureProf', 'intMod');"></input>
+									</th>
+									<th>Nature (Int): </th>
+									<th><input id="nature" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="perceptionProf" type="checkbox" onchange="updateSkillProficiency('perception', 'perceptionProf', 'wisMod');"></input>
-								</th>
-								<th>Perception (Wis): </th>
-								<th><input id="perception" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="perceptionProf" type="checkbox" onchange="updateSkillProficiency('perception', 'perceptionProf', 'wisMod');"></input>
+									</th>
+									<th>Perception (Wis): </th>
+									<th><input id="perception" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="performanceProf" type="checkbox" onchange="updateSkillProficiency('performance', 'performanceProf', 'chaMod');"></input>
-								</th>
-								<th>Performance (Cha): </th>
-								<th><input id="performance" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="performanceProf" type="checkbox" onchange="updateSkillProficiency('performance', 'performanceProf', 'chaMod');"></input>
+									</th>
+									<th>Performance (Cha): </th>
+									<th><input id="performance" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="persuasionProf" type="checkbox" onchange="updateSkillProficiency('persuasion', 'persuasionProf', 'chaMod');"></input>
-								</th>
-								<th>Persuasion (Cha): </th>
-								<th><input id="persuasion" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="persuasionProf" type="checkbox" onchange="updateSkillProficiency('persuasion', 'persuasionProf', 'chaMod');"></input>
+									</th>
+									<th>Persuasion (Cha): </th>
+									<th><input id="persuasion" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="religionProf" type="checkbox" onchange="updateSkillProficiency('religion', 'religionProf', 'intMod');"></input>
-								</th>
-								<th>Religion (Int): </th>
-								<th><input id="religion" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="religionProf" type="checkbox" onchange="updateSkillProficiency('religion', 'religionProf', 'intMod');"></input>
+									</th>
+									<th>Religion (Int): </th>
+									<th><input id="religion" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="sleightProf" type="checkbox" onchange="updateSkillProficiency('sleight', 'sleightProf', 'dexMod');"></input>
-								</th>
-								<th>Sleight of Hand (Dex): </th>
-								<th><input id="sleight" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="sleightProf" type="checkbox" onchange="updateSkillProficiency('sleight', 'sleightProf', 'dexMod');"></input>
+									</th>
+									<th>Sleight of Hand (Dex): </th>
+									<th><input id="sleight" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="stealthProf" type="checkbox" onchange="updateSkillProficiency('stealth', 'stealthProf', 'dexMod');"></input>
-								</th>
-								<th>Stealth (Dex): </th>
-								<th><input id="stealth" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="stealthProf" type="checkbox" onchange="updateSkillProficiency('stealth', 'stealthProf', 'dexMod');"></input>
+									</th>
+									<th>Stealth (Dex): </th>
+									<th><input id="stealth" type="number" class="score" value="0"></input></th>
+								</tr>
 
-							<tr>
-								<th>
-									<input id="survivalProf" type="checkbox" onchange="updateSkillProficiency('survival', 'survivalProf', 'wisMod');"></input>
-								</th>
-								<th>Survival (Wis): </th>
-								<th><input id="survival" type="number" class="score" value="0"></input></th>
-							</tr>
+								<tr>
+									<th>
+										<input id="survivalProf" type="checkbox" onchange="updateSkillProficiency('survival', 'survivalProf', 'wisMod');"></input>
+									</th>
+									<th>Survival (Wis): </th>
+									<th><input id="survival" type="number" class="score" value="0"></input></th>
+								</tr>
 
-						</table>
+							</table>
+						</div>
 					</div>
+					
 				</div>
 				
 				<div class="col-md-6 slot">

@@ -82,6 +82,10 @@
     background-color: rgb(132, 71, 255);
 }
 
+.white-font {
+    color: white;
+}
+
 .center {
     margin: auto;
     text-align: center;
@@ -99,7 +103,7 @@
 }
 
 .table {
-    width: 100%;
+    width: 80%;
 }
 
 .ability-score {
