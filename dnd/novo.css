@@ -1,14 +1,10 @@
-select {
-    text-align: center
-}
-
 .slot {
     border: 1px solid #9cacaf;
     /* background-color: tomato; */
     background-color: #fcfcfc;
 }
 
-.slotup {
+.slot-up {
     border: 1px solid #9cacaf;
     border-bottom-style: hidden;
 
@@ -20,7 +16,7 @@ select {
     margin-top: 10px;
 }
 
-.slotdown {
+.slot-down {
     border: 1px solid #9cacaf;
     border-top-style: hidden;
 

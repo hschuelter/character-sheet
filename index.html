@@ -4,8 +4,8 @@
 
 		<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://getbootstrap.com/docs/4.3/examples/grid/grid.css" rel="stylesheet">
-		<link href="dnd/novo.css" rel="stylesheet">
-		<script src="dnd/utils.js"></script>
+		<link href="./dnd/novo.css" rel="stylesheet">
+		<script src="./dnd/utils.js"></script>
 	</head>
 
 	<body>
@@ -13,12 +13,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="textarea center spacing align-middle" id="name" type="text" placeholder="Type Name Here" />
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing x-large"> Character Name </b> 
 						</div>
@@ -28,7 +28,7 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<select class="textarea center spacing align-middle" name="class" id="classSelect" onchange="selectClass();">
 								<optgroup label="Select Class">
@@ -49,7 +49,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Class </b>
 						</div>
@@ -57,12 +57,12 @@
 				</div>
 
 				<div class="col-md-4">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="textarea center spacing" id="level" type="number" value="1" min="1" max="20" onchange="playerLevelChange();" />
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Level </b>
 						</div>
@@ -70,12 +70,12 @@
 				</div>
 
 				<div class="col-md-4">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="textarea center spacing" id="background" type="text" placeholder="Type Background Here" />
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Background </b>
 						</div>
@@ -86,12 +86,12 @@
 			<div class="row">
 
 				<div class="col-md-4">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="textarea center spacing" id="race" type="text" placeholder="Type Race Here" />
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Race </b>
 						</div>
@@ -100,7 +100,7 @@
 
 
 				<div class="col-md-4">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<select class="textarea center spacing align-middle" name="alignment" id="alignmentSelect" >
 								<optgroup label="Select Alignment">
@@ -117,7 +117,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 						<b class="center spacing"> Alignment </b>
 						</div>
@@ -126,12 +126,12 @@
 
 
 				<div class="col-md-4">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="textarea center spacing" id="experience" type="number" value="0" min="0" />
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 						<b class="center spacing"> Experience </b>
 						</div>
@@ -144,12 +144,12 @@
 
 			<div class="row">
 				<div class="col-md-3">					
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="proficiencyBonus" type="number" value="2" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Proficiency Bonus </b> 
 						</div>
@@ -157,12 +157,12 @@
 				</div>
 				
 				<div class="col-md-3">					
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="armorClass" type="number" value="8" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Armor Class </b>
 						</div>
@@ -170,12 +170,12 @@
 				</div>
 
 				<div class="col-md-3">					
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="initiative" type="number" value="0" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Initiative </b> 
 						</div>
@@ -183,12 +183,12 @@
 				</div>
 
 				<div class="col-md-3">					
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="speed" type="number" value="20" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Speed </b> 
 						</div>
@@ -196,45 +196,45 @@
 				</div>
 			</div>
 
-			<!-- <div class="row">
+			<div class="row">
 				<div class="col-md-1"> </div>
 				<div class="col-md-10">
 					<div class="row">
-						<div class="col-md-6 hp-slotupleft purple">
+						<div class="col-md-6 hp-slot-upleft purple">
 							<div class="row">
 								<b class="center spacing x-large"> Current HP </b> 
 							</div>
 						</div>
-						<div class="col-md-6 hp-slotupright purple">
+						<div class="col-md-6 hp-slot-upright purple">
 							<div class="row">
 								<b class="center spacing x-large"> Max HP </b> 
 							</div>
 						</div>					
 					</div>
 				</div>
-			</div> -->
+			</div>
 			
-			<!-- <div class="row">
+			<div class="row">
 				<div class="col-md-1"> </div>
 				<div class="col-md-10">
 					<div class="row">
-						<div class="col-md-6 hp-slotdownleft">
+						<div class="col-md-6 hp-slot-downleft">
 							<div class="row">
 								<input class="ability-score center spacing x-large" id="currentHP" type="number" value="1" class="ability" onchange="updateHealth();"></input>
 							</div>
 						</div>
-						<div class="col-md-6 hp-slotdownright">
+						<div class="col-md-6 hp-slot-downright">
 							<div class="row">
 								<input class="ability-score center spacing x-large" id="maxHP" type="number" value="1" class="ability" onchange="updateHealth();"></input>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div>
 
-			<!-- <div class="row">
+			<div class="row">
 				<div class="col-md-1"> </div>
-				<div class="col-md-10 hp-slotdown">
+				<div class="col-md-10 hp-slot-down">
 					<div class="row">
 						<div class="health-box">
 							<div id="healthBar" class="health-bar"></div>
@@ -242,11 +242,11 @@
 						</div>
 					</div>
 				</div>
-			</div>	 -->
+			</div>	
 
 			<div class="row">
 				<div class="col-md-2">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center x-large spacing" id="strScore" type="number" value="10" onchange="updateModifiers();" class="score"></input>
 						</div>
@@ -254,7 +254,7 @@
 							<input class="ability-score center spacing" id="strMod" type="number" value="0" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Strength </b> 
 						</div>
@@ -262,7 +262,7 @@
 				</div>
 
 				<div class="col-md-2">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="dexScore" type="number" value="10" onchange="updateModifiers();" class="score"></input>
 						</div>
@@ -270,7 +270,7 @@
 							<input class="ability-score center spacing" id="dexMod" type="number" value="0" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Dexterity </b> 
 						</div>
@@ -278,7 +278,7 @@
 				</div>
 
 				<div class="col-md-2">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="conScore" type="number" value="10" onchange="updateModifiers();" class="score"></input>
 						</div>
@@ -286,7 +286,7 @@
 							<input class="ability-score center spacing" id="conMod" type="number" value="0" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Constitution </b> 
 						</div>
@@ -294,7 +294,7 @@
 				</div>
 				
 				<div class="col-md-2">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="intScore" type="number" value="10" onchange="updateModifiers();" class="score"></input>
 						</div>
@@ -302,14 +302,14 @@
 							<input class="ability-score center spacing" id="intMod" type="number" value="0" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Intelligence </b> 
 						</div>
 					</div>
 				</div>
 				<div class="col-md-2">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="wisScore" type="number" value="10" onchange="updateModifiers();" class="score"></input>
 						</div>
@@ -317,14 +317,14 @@
 							<input class="ability-score center spacing" id="wisMod" type="number" value="0" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Wisdom </b> 
 						</div>
 					</div>
 				</div>
 				<div class="col-md-2">
-					<div class="slotup">
+					<div class="slot-up">
 						<div class="row">
 							<input class="ability-score center spacing x-large" id="chaScore" type="number" value="10" onchange="updateModifiers();" class="score"></input>
 						</div>
@@ -332,7 +332,7 @@
 							<input class="ability-score center spacing" id="chaMod" type="number" value="0" class="ability"></input>
 						</div>
 					</div>
-					<div class="slotdown purple">
+					<div class="slot-down purple">
 						<div class="row">
 							<b class="center spacing"> Charisma </b> 
 						</div>
@@ -346,13 +346,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="slotup purple">
+					<div class="slot-up purple">
 						<div class="row">
 							<b class="center spacing x-large white-font"> Skills </b> 
 						</div>
 					</div>
 
-					<div class="slotdown">
+					<div class="slot-down">
 						<div class="row">
 							<table class="table table-hover center">
 								<tr>
