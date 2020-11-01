@@ -4,7 +4,7 @@
     background-color: #fcfcfc;
 }
 
-.slot-up {
+.slotup {
     border: 1px solid #9cacaf;
     border-bottom-style: hidden;
 
@@ -16,7 +16,7 @@
     margin-top: 10px;
 }
 
-.slot-down {
+.slotdown {
     border: 1px solid #9cacaf;
     border-top-style: hidden;
 
